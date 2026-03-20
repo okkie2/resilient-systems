@@ -19,4 +19,4 @@ The underlying question is simple:
 Written by J. Okkinga
 
 
-J. Okkinga is an IT consultant with two decades of experience working on regulated digital systems, platform dependency, and operational resilience.
+J. Okkinga is an established IT consultant with two decades of experience working on regulated digital systems, platform dependency, and operational resilience.
