@@ -105,19 +105,22 @@ http://localhost:1313
 
 ## Publishing
 
-The site is generated as static HTML and deployed to StaticHost via a small shell script.
+The site is deployed from GitHub to StaticHost.
 
-If `publish.sh` is present and executable:
+The repository stores the Hugo source files, not generated output. StaticHost pulls the repository, reads `statichost.yml`, builds the site with Hugo, and publishes the generated `public/` directory.
+
+Deployment flow:
+1. Push changes to `main` on GitHub
+2. GitHub sends a webhook to StaticHost
+3. StaticHost builds and publishes the site
+
+Manual verification:
 
 ```bash
-./publish.sh
+curl -X POST https://builder.statichost.eu/resilient-systems-eu
 ```
 
-This command:
-1. Builds the site using Hugo
-2. Uploads the generated output to the configured hosting target
-
-The deployment deliberately avoids CI pipelines or complex tooling to keep the operational surface area small.
+This triggers a build manually and is useful when testing repository or build configuration changes.
 
 ---
 
@@ -139,4 +142,3 @@ This is an active, evolving project. Content reflects the state of decisions at 
 ---
 
 Published with Hugo.
-
