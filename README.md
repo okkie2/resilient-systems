@@ -122,6 +122,8 @@ curl -X POST https://builder.statichost.eu/resilient-systems-eu
 
 This triggers a build manually and is useful when testing repository or build configuration changes.
 
+The production deployment target is `resilientsystems.eu`.
+
 ---
 
 ## Design constraints
