@@ -1,0 +1,4 @@
+baseURL = "https://digitalemigration.eu/"
+languageCode = "en-gb"
+title = "Digital Emigration"
+theme = "hugo-bearblog"

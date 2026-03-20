@@ -1,0 +1,32 @@
+{{/* layouts/partials/thematic-list.html */}}
+
+{{ $ctx := index . "ctx" }}
+{{ $param := index . "param" }}
+{{ $labels := index . "labels" }}
+{{ $order := index . "order" }}
+
+{{ $groups := $ctx.Pages.GroupByParam $param }}
+
+<div class="thematic-list">
+  {{ range $key := $order }}
+    {{ $matches := where $groups "Key" $key }}
+    {{ with (index $matches 0) }}
+      <section class="theme">
+        {{ with (index $labels $key) }}
+          <h2 class="theme-title">{{ . }}</h2>
+        {{ end }}
+
+        <ul class="theme-items">
+          {{ range .Pages.ByDate.Reverse }}
+            <li class="theme-item">
+              <a class="theme-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+              {{ with .Params.description }}
+                <p class="theme-desc">{{ . }}</p>
+              {{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      </section>
+    {{ end }}
+  {{ end }}
+</div>

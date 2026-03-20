@@ -1,0 +1,41 @@
+{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  {{/* All essays in the failure-modes section */}}
+  {{ $posts := where site.RegularPages "Section" "failure-modes" }}
+
+  {{ range site.Data.failure_modes.modes }}
+    {{ $key := .key }}
+    {{ $matches := where $posts "Params.failure_modes" "intersect" (slice $key) }}
+
+    <section style="margin-top:2rem">
+      <h2 id="{{ $key | urlize }}">{{ .title }}</h2>
+
+      {{ with .description }}<p>{{ . }}</p>{{ end }}
+      {{ with .diagnostic }}<p>Key question: {{ . }}</p>{{ end }}
+
+      {{ if gt (len $matches) 0 }}
+        <ul class="blog-posts-bullet">
+          {{ range $matches.ByDate.Reverse }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      {{ else }}
+        <p><em>No posts yet.</em></p>
+      {{ end }}
+    </section>
+  {{ end }}
+
+  {{/* Closing Fragment */}}
+  {{ $closing := site.GetPage "page" "failure-modes/meta/closing" }}
+  {{ with $closing }}
+    <section style="margin-top:3rem">
+      <hr>
+      <h2>{{ .Title }}</h2>
+      {{ .Content }}
+    </section>
+  {{ end }}
+</article>
+{{ end }}

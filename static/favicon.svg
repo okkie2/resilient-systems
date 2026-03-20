@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    :root{
+      --font-main: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      --background-color: #fff;
+      --heading-color: #1f1f1f;
+      --link-color: #1f5fbf;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root{
+        --background-color: #0b1220;
+        --heading-color: #eef2f7;
+        --link-color: #8ab4f8;
+      }
+    }
+
+    text{
+      font-family: var(--font-main);   /* ← now matches headings */
+      font-weight: 700;
+      letter-spacing: -0.5px;          /* serif needs less tightening */
+      fill: var(--heading-color);      /* calmer &amp; more “editorial” */
+    }
+  </style>
+
+  <rect width="64" height="64" rx="12" fill="var(--background-color)"></rect>
+
+  <text x="32" y="43" font-size="30" text-anchor="middle">RS</text>
+</svg>

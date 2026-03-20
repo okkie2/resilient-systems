@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+{{ if not .Params.menu }}
+  <h1>{{ .Title }}</h1>
+
+<p class="post-meta">
+  Published:
+  <time datetime="{{ .Date.Format "2006-01-02" }}">
+    {{ .Date.Format (default "02-01-2006" .Site.Params.dateFormat) }}
+  </time>
+
+  {{ if ne .Lastmod .Date }}
+  <span class="updated">
+    · Last updated:
+    <time datetime="{{ .Lastmod.Format "2006-01-02" }}">
+      {{ .Lastmod.Format (default "02-01-2006" $.Site.Params.dateFormat) }}
+    </time>
+  </span>
+{{ end }}
+</p>
+
+{{ end }}
+
+<content>
+  {{ .Content }}
+</content>
+
+{{ partial "references.html" . }}
+
+{{ if (.Param "enablePostNavigator") }}
+  {{- partial "post_navigator.html" . -}}
+{{ end }}
+
+<p>
+  {{ range (.GetTerms "tags") }}
+    <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+  {{ end }}
+</p>
+
+{{ end }}

@@ -1,0 +1,16 @@
+{{- with .Params.references -}}
+<section class="references">
+  <h2>References</h2>
+  <ol>
+    {{- range . -}}
+      <li>
+        {{- if .url -}}
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .text }}</a>
+        {{- else -}}
+          {{ .text }}
+        {{- end -}}
+      </li>
+    {{- end -}}
+  </ol>
+</section>
+{{- end -}}

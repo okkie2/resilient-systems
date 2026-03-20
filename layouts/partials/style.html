@@ -1,0 +1,310 @@
+<style>
+  /* ===============================
+     Global design variables
+     =============================== */
+  :root {
+    --width: 680px;
+    --font-main: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-secondary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-scale: 1.08em;
+    --background-color: #fff;
+    --text-color: #3a3a3a;
+    --heading-color: #1f1f1f;
+    --link-color: #1f5fbf;
+    --visited-color: #4f46a5;
+    --blockquote-color: #222;
+    --meta-color: #777;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #0b1220;
+      --heading-color: #eef2f7;
+      --text-color: #cfd7e3;
+      --link-color: #8ab4f8;
+      --visited-color: #b3a7ff;
+      --blockquote-color: #d7dee8;
+      --meta-color: #aaa;
+    }
+  }
+
+  /* ===============================
+     Base layout and typography
+     =============================== */
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.65;
+    color: var(--text-color);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  /* ===============================
+     Heading tweaks (single pages)
+     =============================== */
+  main > h1 {
+    letter-spacing: -0.01em;
+  }
+
+  h2 {
+    font-size: 1.35em;
+    line-height: 1.25;
+    margin-top: 2.6rem;
+    margin-bottom: 0.7rem;
+  }
+
+  h3 {
+    font-size: 1.15em;
+    line-height: 1.3;
+    margin-top: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ===============================
+     Links (WCAG-first)
+     Default: always underlined.
+     Exceptions: nav + titles.
+     =============================== */
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 0.08em;
+  }
+
+  a:hover {
+    text-decoration-thickness: 0.12em;
+  }
+
+  a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    text-decoration-thickness: 0.12em;
+  }
+
+  a:visited {
+    color: var(--visited-color);
+  }
+
+  nav a,
+  .title a,
+  main article h1 a,
+  main article h2 a,
+  main article h3 a,
+  .thematic-list .theme-link {
+    text-decoration: none;
+  }
+
+  nav a:visited,
+  .title a:visited,
+  main article h1 a:visited,
+  main article h2 a:visited,
+  main article h3 a:visited {
+    color: var(--link-color);
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  /* ===============================
+     Text emphasis and controls
+     =============================== */
+  strong, b { color: var(--heading-color); }
+  button { margin: 0; cursor: pointer; }
+
+  /* ===============================
+     Time and metadata
+     =============================== */
+  .post-meta {
+    margin: 0.15rem 0 1.1rem;
+    font-size: 0.82rem;
+    color: var(--meta-color);
+    opacity: 0.75;
+  }
+
+  .post-meta time {
+    font-family: monospace;
+    font-style: normal;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ===============================
+     Main content area
+     =============================== */
+  main { line-height: 1.6; }
+  table { width: 100%; }
+  hr { border: 0; border-top: 1px dashed; }
+  img { max-width: 100%; }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 3px solid #999;
+    color: var(--blockquote-color);
+    padding-left: 1rem;
+    margin: 1.2rem 0;
+    font-style: normal;
+  }
+
+  /* ===============================
+     List rhythm (article body only)
+     =============================== */
+  main ul li {
+    margin: 0.55rem 0;
+  }
+
+  /* ===============================
+     References
+     =============================== */
+  .references {
+    margin-top: 4rem;
+    font-size: 0.93em;
+    opacity: 0.75;
+  }
+
+  .references h2 {
+    font-size: 1.05em;
+    margin-bottom: 0.6rem;
+  }
+
+  .references ol {
+    padding-left: 1.2rem;
+  }
+
+  .references li {
+    margin: 0.35rem 0;
+  }
+
+  /* ===============================
+     Footer
+     =============================== */
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  /* ===============================
+     Title block (site header)
+     =============================== */
+  .title h1 { font-size: 1.5em; }
+
+  /* ===============================
+     Utility classes
+     =============================== */
+  .inline { width: auto !important; }
+
+  .highlight, .code {
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+  /* ===============================
+     Blog post list (chronological with date column)
+     =============================== */
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  /* ===============================
+     Blog post bullets (no dates)
+     =============================== */
+  ul.blog-posts-bullet {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin: 0.75rem 0 0;
+  }
+
+  ul.blog-posts-bullet li {
+    display: list-item;
+    margin: 0.35rem 0;
+  }
+
+  /* ===============================
+     Summaries
+     =============================== */
+  .summary {
+    margin: 6px 0 0 0;
+    max-width: 65ch;
+  }
+
+  /* ===============================
+     Thematic list
+     =============================== */
+  .thematic-list .theme {
+    margin: 2rem 0 2.4rem;
+  }
+
+  .thematic-list .theme-title {
+    margin: 1.3rem 0 0.6rem;
+    font-size: 1.25em;
+    font-weight: 600;
+    color: var(--heading-color);
+  }
+
+  .thematic-list .theme:first-child .theme-title {
+    margin-top: 1.0rem;
+  }
+
+  .thematic-list .theme-items {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.3rem 0 0.8rem;
+  }
+
+  .thematic-list .theme-item {
+    position: relative;
+    padding-left: 1.1rem;
+    margin: 0 0 1rem;
+  }
+
+  .thematic-list .theme-item::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.7;
+  }
+
+  .thematic-list .theme-link {
+    font-weight: 600;
+  }
+
+  .thematic-list .theme-link:hover,
+  .thematic-list .theme-link:focus-visible {
+    text-decoration: underline;
+  }
+
+  .thematic-list .theme-desc {
+    margin: 0.35rem 0 0;
+    max-width: 65ch;
+    line-height: 1.55;
+  }
+</style>

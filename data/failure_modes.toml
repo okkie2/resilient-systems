@@ -1,0 +1,40 @@
+[[modes]]
+key = "chokepoint"
+title = "Chokepoint Concentration"
+axis = "Dependency topology"
+trigger = "Concentrated infrastructure or identity layer"
+description = "Multiple critical functions depend on the same upstream node. A local failure cascades across dependent systems."
+diagnostic = "How many independent systems would fail if this upstream node failed?"
+
+[[modes]]
+key = "asymmetry"
+title = "Operational Control Asymmetry"
+axis = "Operational authority"
+trigger = "Upstream refusal or conditional service"
+description = "The system only works if another party keeps cooperating. If they refuse or change terms, your system stops working."
+diagnostic = "Can this system continue functioning if the upstream provider refuses to cooperate?"
+
+[[modes]]
+key = "coercive-control"
+title = "Coercive Control"
+axis = "Legal authority"
+trigger = "Jurisdictional compulsion"
+description = "An external authority can force the system to behave differently. Technical safeguards do not protect against legal or political orders."
+diagnostic = "Can a foreign authority legally require this system to deny access, alter behaviour, or expose data?"
+
+
+[[modes]]
+key = "ownership-transfer"
+title = "Upstream Control Transfer"
+axis = "Stability of ultimate control"
+trigger = "Acquisition, restructuring, capital reallocation"
+description = "Control of a dependency can change without you changing the dependency itself. Exposure can increase without any technical change on your side."
+diagnostic = "If ownership changed tomorrow, would your exposure increase while your dependency remained?"
+
+[[modes]]
+key = "lock-in"
+title = "Lock-in"
+axis = "Exit feasibility"
+trigger = "Integration depth, data gravity, switching cost"
+description = "Leaving becomes too expensive, complex, or disruptive. Dependency persists even when conditions deteriorate."
+diagnostic = "Could you exit within 6–12 months without systemic disruption?"

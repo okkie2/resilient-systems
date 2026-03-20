@@ -1,0 +1,28 @@
+baseURL = "https://resilientsystems.eu/"
+languageCode = "en-gb"
+title = "Resilient Systems"
+theme = "hugo-bearblog"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+enableGitInfo = false
+
+[frontmatter]
+  lastmod = ["lastmod",  "date"]
+
+[params]
+  description = "Considering exit cost, jurisdiction and dependency risk in digital infrastructure."
+  dateFormat = "02-01-2006"
+
+[menu]
+    
+  [[menu.main]]
+    name = "Failure modes"
+    pageRef = "/failure-modes/"
+    weight = 20
+
+  [[menu.main]]
+    name = "Personal Implications"
+    pageRef = "/personal-implications/"
+    weight = 40
+
+

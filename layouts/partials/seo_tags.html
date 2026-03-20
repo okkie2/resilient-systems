@@ -1,0 +1,32 @@
+<!-- Primary Meta Tags -->
+<meta name="title" content="{{ if .IsHome }}{{ .Site.Title }}: {{ .Title }}{{ else }}{{ .Title }}{{ end }}" />
+
+{{- $desc := "" -}}
+{{- with .Description -}}
+  {{- $desc = . -}}
+{{- else -}}
+  {{- if .IsPage -}}
+    {{- $desc = .Summary -}}
+  {{- else -}}
+    {{- with .Site.Params.description -}}{{- $desc = . -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+<meta name="description" content="{{ $desc }}" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}: {{ .Title }}{{ else }}{{ .Title }}{{ end }}" />
+<meta property="og:description" content="{{ $desc }}" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}: {{ .Title }}{{ else }}{{ .Title }}{{ end }}" />
+<meta name="twitter:description" content="{{ $desc }}" />
+
+<!-- Microdata -->
+{{ if .IsPage }}
+  {{ template "_internal/schema.html" . }}
+{{ end }}
+
