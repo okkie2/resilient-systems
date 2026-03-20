@@ -8,6 +8,8 @@ description: "How jurisdiction, ownership, concentration, and exit cost shape di
 Catastrophic failure can emerge even when digital systems are excellently designed and operated.
 The most consequential breakdowns occur when control, dependency, and exit constraints collide.
 
+This site examines how digital systems become hard to leave, hard to control, or hard to trust when the surrounding conditions change. It looks at those questions in two ways: first as a structural model of recurring failure patterns, and then as a set of practical tests applied to a personal technology stack.
+
 An account is disabled despite an excellent service level agreement.
 A service becomes unavailable after a legal shift.
 A platform policy change cascades across dependent systems.
@@ -18,7 +20,7 @@ They are structural failures.
 
 ## Failure Modes
 
-Recurring patterns through which dependency becomes fragility.
+The conceptual framework of the site: recurring patterns through which dependency becomes fragility.
 
 * **Coercive Control**  - When external legal or political authority can compel system behaviour or restrict access.
 * **Operational Control Asymmetry**  - When systems depend on upstream actors for authentication, updates, licensing, or orchestration.
@@ -30,7 +32,7 @@ Recurring patterns through which dependency becomes fragility.
 
 ## Personal Implications
 
-The same dependency risks examined at systemic scale, applied within a personal digital infrastructure and tested against real-world constraints.
+The practical side of the site: the same dependency risks, applied within a personal digital infrastructure and tested against real-world constraints.
 
 [View Personal Implications](personal-implications)
 
