@@ -3,14 +3,10 @@ title: "Personal Implications"
 date: 2026-02-01
 ---
 
-Systemic risk is easy to discuss at the level of states, laws, and platforms. It becomes harder when it appears in your own digital life: your inbox, photo albums, messaging, file storage, and devices.
+This section tests structural arguments against real constraints, using a lived technology stack as a practical testbed for dependency, lock-in, migration cost, and real exit cost.
 
-In the Failure Modes section I describe recurring patterns that make digital systems fragile: chokepoints, control asymmetry, exit cost, deep integration, and governance drift.
+## Start with
 
-This section applies that lens to my own dependencies. It is where the abstract model is tested against practical choices, inconvenience, lock-in, and trade-offs.
-
-I document small changes that reduce exposure, lower exit costs, and remove hidden couplings that create single points of failure. Sometimes the change works. Sometimes it reveals how locked-in I really am.
-
-The point is not purity. It is to understand those trade-offs in practice.
-
-## Change log
+- [Why I’m reducing my dependence on US tech](/personal-implications/why-im-reducing-my-dependence-on-us-tech/)
+- [Dependency map: understanding digital lock‑in in a personal tech stack](/personal-implications/dependency-map/)
+- [What it really takes to leave Gmail after 20 years](/personal-implications/what-it-takes-to-leave-gmail-after-20-years/)

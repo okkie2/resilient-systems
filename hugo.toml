@@ -10,19 +10,23 @@ enableGitInfo = false
   lastmod = ["lastmod",  "date"]
 
 [params]
-  description = "Considering exit cost, jurisdiction and dependency risk in digital infrastructure."
+  description = "An experienced product and technology operator writing about agentic AI, structural risk, and designing for sovereign systems."
   dateFormat = "02-01-2006"
+  tagline = "Designing for sovereign systems in the age of agentic AI"
 
 [menu]
     
   [[menu.main]]
-    name = "Failure modes"
+    name = "Structural Risk"
     pageRef = "/failure-modes/"
     weight = 20
 
   [[menu.main]]
-    name = "Personal Implications"
+    name = "Agentic AI"
+    pageRef = "/agentic-building/"
+    weight = 30
+
+  [[menu.main]]
+    name = "Field Practice"
     pageRef = "/personal-implications/"
     weight = 40
-
-

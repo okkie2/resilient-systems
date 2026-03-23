@@ -4,14 +4,10 @@ description: "A structural model describing how control and dependency interact 
 date: 2026-02-13
 ---
 
-Digital systems rarely collapse because of code alone.
-They fracture when control and dependency drift apart.
+This section maps how control, dependency, and chokepoints turn capable systems fragile under stress.
 
-- A service can run flawlessly and still become fragile.
-- A contract can be honoured and still leave you exposed.
-- An integration can deepen and quietly narrow your options.
+## Start with
 
-Resilience is not uptime.
-It is the ability to substitute, adapt, or walk away when conditions change.
-
-This page maps five structural failure modes that recur across platforms, cloud providers, identity systems, and public infrastructure. Each describes a distinct way control can diverge from dependency.
+- [The sovereignty question the Big Three cloud providers cannot answer](/failure-modes/the_sovereignty_question_the_big_three_cloud_providers_cannot_answer/)
+- [Why many “sovereign clouds” aren’t actually sovereign](/failure-modes/why-many-sovereign-clouds-arent-sovereign/)
+- [Is Microsoft Authenticator a Single Point of Failure? The Attack Surface vs. Blast Radius Trade-Off](/failure-modes/is-microsoft-authenticator-a-single-point-of-failure/)

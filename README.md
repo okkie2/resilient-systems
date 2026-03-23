@@ -22,13 +22,21 @@ The site records answers as they emerge in practice.
 
 ## Site structure
 
-The site is organised into a small number of deliberately broad sections:
+The site is organised into three deliberately broad sections:
 
-### Premise
-Background and framing: why the project exists, the assumptions it starts from, and the constraints that shape it. This section establishes the lens through which all other content should be read.
+### Failure modes
+The conceptual model of the site. These articles describe recurring structural patterns through which dependency becomes fragility: jurisdictional exposure, control asymmetry, concentrated chokepoints, ownership drift, and high exit cost.
 
-### Emigration log
-Practical write‑ups of individual moves (e.g. browser, storage, communication, devices).
+### Agentic building
+A constructive stream about using advanced coding agents and smaller local AI systems to increase autonomy without deepening long-term dependence more than necessary.
+
+The emphasis is on:
+- *How* agentic leverage changes what one person can build
+- *Where* upstream dependence still remains
+- *What* design choices preserve privacy, portability, and operator control
+
+### Personal implications
+Practical write‑ups of concrete changes in a personal technology stack.
 
 Each entry focuses on:
 - *Why* a change was made
@@ -36,9 +44,6 @@ Each entry focuses on:
 - *What* was gained or lost in practice
 
 These are not recommendations, but documented experiments.
-
-### Digital sovereignty
-More reflective pieces on ownership, jurisdiction, dependency chains, and control. These articles connect individual decisions to broader structural patterns and policy questions.
 
 Each section is anchored by a `_index.md` file that provides context and orientation.
 

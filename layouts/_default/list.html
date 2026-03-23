@@ -1,30 +1,32 @@
 {{ define "main" }}
 <content>
+  <p class="eyebrow">
+    {{- if eq .Section "failure-modes" -}}Structural Risk
+    {{- else if eq .Section "agentic-building" -}}Agentic AI
+    {{- else if eq .Section "personal-implications" -}}Field Practice
+    {{- else -}}{{ .Section | humanize }}{{ end }}
+  </p>
   <h1>{{ .Title }}</h1>
   {{ if .Content }}{{ .Content }}{{ end }}
-
-  {{ if .Data.Singular }}
-    <h3 style="margin-bottom:0">Filtering for "{{ .Title }}"</h3>
-    <small><a href="{{ "blog" | relURL }}">Remove filter</a></small>
-  {{ end }}
-
-  <ul class="blog-posts">
-    {{ range .Pages }}
-      <li>
-        <span><i><time datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}</time></i></span>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-      </li>
-    {{ else }}
-      <li>No posts yet</li>
-    {{ end }}
-  </ul>
-
-  {{ if not .Data.Singular }}
-    <small><div>
-      {{ range .Site.Taxonomies.tags }}
-        <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
+  <section class="section-listing">
+    <h2>Articles</h2>
+    <ul class="blog-posts blog-posts-detailed">
+      {{ range .Pages }}
+        <li>
+          <div class="post-date">
+            <time datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}</time>
+          </div>
+          <div class="post-copy">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ with .Params.description }}
+              <p class="summary">{{ . }}</p>
+            {{ end }}
+          </div>
+        </li>
+      {{ else }}
+        <li>No posts yet</li>
       {{ end }}
-    </div></small>
-  {{ end }}
+    </ul>
+  </section>
 </content>
 {{ end }}

@@ -1,6 +1,12 @@
 {{ define "main" }}
 
 {{ if not .Params.menu }}
+  <p class="eyebrow">
+    {{- if eq .Section "failure-modes" -}}Structural Risk
+    {{- else if eq .Section "agentic-building" -}}Agentic AI
+    {{- else if eq .Section "personal-implications" -}}Field Practice
+    {{- else -}}{{ .Section | humanize }}{{ end }}
+  </p>
   <h1>{{ .Title }}</h1>
 
 <p class="post-meta">
@@ -8,6 +14,7 @@
   <time datetime="{{ .Date.Format "2006-01-02" }}">
     {{ .Date.Format (default "02-01-2006" .Site.Params.dateFormat) }}
   </time>
+  <span>· {{ .ReadingTime }} min read</span>
 
   {{ if ne .Lastmod .Date }}
   <span class="updated">
@@ -22,6 +29,9 @@
 {{ end }}
 
 <content>
+  {{ with .Params.description }}
+    <p class="article-summary">{{ . }}</p>
+  {{ end }}
   {{ .Content }}
 </content>
 

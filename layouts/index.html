@@ -1,3 +1,114 @@
 {{ define "main" }}
-{{ .Content }}
+{{ $failureModes := site.GetPage "/failure-modes" }}
+{{ $agenticBuilding := site.GetPage "/agentic-building" }}
+{{ $personalImplications := site.GetPage "/personal-implications" }}
+
+<section class="home-hero">
+  <p class="eyebrow">{{ .Site.Params.tagline }}</p>
+  <p class="hero-lead">
+    I bring two decades of experience in technology and regulated digital systems, alongside an active hands-on practice in agentic AI. This site connects frontier tooling with deeper questions of dependency, autonomy, and operational resilience.
+  </p>
+</section>
+
+<section class="home-stakes">
+  <h2>The Design Constraint Has Changed</h2>
+  <p>
+    Real systems now accumulate strain from several directions at once: geopolitical fragmentation, concentrated dependency on foreign platforms, more brittle social and institutional conditions, and a dramatic increase in system change velocity through agentic AI.
+  </p>
+  <p>
+    The question here is not whether these shifts are interesting. It is what they change for product, platform, architecture, and organisational design when continuity, control, and optionality can no longer be treated as secondary concerns.
+  </p>
+</section>
+
+<section class="home-audience">
+  <h2>Who This Is For</h2>
+  <p>
+    This site is written for founders, CTOs, product leaders, architects, consultants, and senior peers who need to connect external change to real design choices inside products, platforms, and organisations.
+  </p>
+</section>
+
+<section class="home-start">
+  <h2>Start Here</h2>
+  <div class="reading-list">
+    {{ with site.GetPage "/failure-modes/the_sovereignty_question_the_big_three_cloud_providers_cannot_answer" }}
+      <article class="list-item">
+        <p class="path-label">Core argument</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+      </article>
+    {{ end }}
+    {{ with site.GetPage "/failure-modes/is-microsoft-authenticator-a-single-point-of-failure" }}
+      <article class="list-item">
+        <p class="path-label">Architecture example</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+      </article>
+    {{ end }}
+    {{ with site.GetPage "/personal-implications/why-im-reducing-my-dependence-on-us-tech" }}
+      <article class="list-item">
+        <p class="path-label">Personal context</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+      </article>
+    {{ end }}
+    {{ with site.GetPage "/personal-implications/building-this-blog-without-a-platform" }}
+      <article class="list-item">
+        <p class="path-label">Implementation decision</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+      </article>
+    {{ end }}
+  </div>
+</section>
+
+<section class="home-sections">
+  <h2>Three Working Threads</h2>
+  <div class="thread-list">
+    <article class="list-item">
+      <p class="section-label">Framework</p>
+      <h3><a href="{{ $failureModes.RelPermalink }}">Structural Risk</a></h3>
+      <p>Patterns through which dependency becomes fragility: coercive leverage, chokepoints, governance drift, and loss of operational control.</p>
+      <p><a href="{{ $failureModes.RelPermalink }}">Read the structural model</a></p>
+    </article>
+
+    <article class="list-item">
+      <p class="section-label">Current practice</p>
+      <h3><a href="{{ $agenticBuilding.RelPermalink }}">Agentic AI</a></h3>
+      <p>Notes, experiments, and design questions from working hands-on with agentic coding systems while keeping autonomy and system design in view.</p>
+      <p><a href="{{ $agenticBuilding.RelPermalink }}">Follow the agentic AI work</a></p>
+    </article>
+
+    <article class="list-item">
+      <p class="section-label">Applied constraints</p>
+      <h3><a href="{{ $personalImplications.RelPermalink }}">Field Practice</a></h3>
+      <p>Concrete migrations and trade-offs inside a personal stack, used as a testbed for dependency, resilience, and real exit cost.</p>
+      <p><a href="{{ $personalImplications.RelPermalink }}">See the field practice</a></p>
+    </article>
+  </div>
+</section>
+
+<section class="home-recent">
+  <h2>Recent Writing</h2>
+  <ul class="blog-posts blog-posts-detailed">
+    {{ range first 5 (where site.RegularPages "Section" "in" (slice "failure-modes" "agentic-building" "personal-implications")) }}
+      <li>
+        <div class="post-date">
+          <time datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}</time>
+        </div>
+        <div class="post-copy">
+          <p class="post-kicker">
+            {{- if eq .Section "failure-modes" -}}Structural Risk
+            {{- else if eq .Section "agentic-building" -}}Agentic AI
+            {{- else if eq .Section "personal-implications" -}}Field Practice
+            {{- else -}}{{ .Section | humanize }}{{ end }}
+          </p>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ with .Params.description }}
+            <p class="summary">{{ . }}</p>
+          {{ end }}
+        </div>
+      </li>
+    {{ end }}
+  </ul>
+</section>
 {{ end }}

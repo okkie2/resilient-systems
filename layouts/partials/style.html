@@ -119,6 +119,10 @@
     margin-right: 8px;
   }
 
+  nav {
+    margin-bottom: 1.5rem;
+  }
+
   /* ===============================
      Text emphasis and controls
      =============================== */
@@ -255,6 +259,114 @@
     max-width: 65ch;
   }
 
+  .article-summary {
+    margin: 0 0 1.3rem;
+    max-width: 62ch;
+    font-size: 1.02rem;
+    color: var(--heading-color);
+  }
+
+  .eyebrow,
+  .section-label,
+  .path-label,
+  .post-kicker {
+    margin: 0 0 0.45rem;
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--meta-color);
+  }
+
+  .home-hero {
+    margin: 1rem 0 2.6rem;
+    padding: 0 0 1.8rem;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.25);
+  }
+
+  .home-hero h1 {
+    margin: 0 0 1rem;
+    max-width: 24ch;
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    line-height: 1.08;
+  }
+
+  .hero-lead {
+    margin: 0;
+    max-width: 58ch;
+    font-size: 1.08rem;
+    line-height: 1.7;
+  }
+
+  .home-audience,
+  .home-stakes,
+  .home-sections,
+  .home-start,
+  .home-recent,
+  .section-listing {
+    margin: 2.4rem 0 0;
+  }
+
+  .section-grid,
+  .reading-path,
+  .reading-list,
+  .thread-list {
+    margin-top: 1rem;
+  }
+
+  .list-item {
+    padding: 1rem 0 1.1rem;
+    border-top: 1px solid rgba(127, 127, 127, 0.18);
+  }
+
+  .list-item:last-child {
+    border-bottom: 1px solid rgba(127, 127, 127, 0.18);
+  }
+
+  .list-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .list-item p:last-child {
+    margin-bottom: 0;
+  }
+
+  .blog-posts-detailed li {
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 0.95rem 0;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.18);
+  }
+
+  .blog-posts-detailed li:first-child {
+    border-top: 1px solid rgba(127, 127, 127, 0.18);
+  }
+
+  .post-date {
+    flex: 0 0 130px;
+    font-size: 0.9rem;
+    color: var(--meta-color);
+  }
+
+  .post-copy {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .post-copy > a {
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .post-copy > a:hover,
+  .post-copy > a:focus-visible {
+    text-decoration: underline;
+  }
+
+  .post-copy .summary {
+    margin-top: 0.35rem;
+  }
+
   /* ===============================
      Thematic list
      =============================== */
@@ -306,5 +418,27 @@
     margin: 0.35rem 0 0;
     max-width: 65ch;
     line-height: 1.55;
+  }
+
+  @media (max-width: 640px) {
+    body {
+      padding: 18px;
+    }
+
+    ul.blog-posts li,
+    .blog-posts-detailed li {
+      display: block;
+    }
+
+    ul.blog-posts li span,
+    .post-date {
+      display: block;
+      margin-bottom: 0.35rem;
+      flex: none;
+    }
+
+    .home-hero h1 {
+      max-width: none;
+    }
   }
 </style>
