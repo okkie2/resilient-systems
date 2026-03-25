@@ -30,6 +30,13 @@
 <section class="home-start">
   <h2>Start Here</h2>
   <div class="reading-list">
+    {{ with site.GetPage "/failure-modes/germany-makes-digital-sovereignty-an-architectural-property" }}
+      <article class="list-item">
+        <p class="path-label">Current signal</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+      </article>
+    {{ end }}
     {{ with site.GetPage "/failure-modes/the_sovereignty_question_the_big_three_cloud_providers_cannot_answer" }}
       <article class="list-item">
         <p class="path-label">Core argument</p>

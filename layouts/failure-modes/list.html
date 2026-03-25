@@ -8,7 +8,12 @@
 
   {{ range site.Data.failure_modes.modes }}
     {{ $key := .key }}
-    {{ $matches := where $posts "Params.failure_modes" "intersect" (slice $key) }}
+    {{ $matches := slice }}
+    {{ range $posts }}
+      {{ if in (.Params.failure_modes | default (slice)) $key }}
+        {{ $matches = $matches | append . }}
+      {{ end }}
+    {{ end }}
 
     <section style="margin-top:2rem">
       <h2 id="{{ $key | urlize }}">{{ .title }}</h2>
