@@ -5,6 +5,9 @@ date: 2026-03-18
 failure_modes:
   - lock-in
   - asymmetry
+references:
+  - text: "IT-Planungsrat, Beschluss B 2026/03"
+    url: "https://www.it-planungsrat.de/beschluss/b-2026-03-it"
 ---
 
 On 18 March 2026, Germany’s IT-Planungsrat made digital sovereignty more concrete.
