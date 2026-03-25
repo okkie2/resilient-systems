@@ -88,6 +88,7 @@ I use this checklist to track which dependencies I have already resolved or redu
 
 ### Communication
 - [x]  [My email no longer depends on Gmail](/personal-implications/what-it-takes-to-leave-gmail-after-20-years/)
+- [x] I have swapped out macOS Mail for Thunderbird
 - [ ] My calendar no longer depends on Google Calendar
 - [ ] My primary messaging no longer depends on WhatsApp
 - [ ] My work communication no longer depends on Microsoft Teams
