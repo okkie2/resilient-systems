@@ -1,6 +1,6 @@
 ---
 title: "Germany makes digital sovereignty an architectural property"
-description: "Germany’s March 18 IT-Planungsrat decision matters because it turns digital sovereignty from a hosting question into an architectural one."
+description: "Germany’s latest sovereignty move shifts digital sovereignty out of hosting and into system design."
 date: 2026-03-18
 failure_modes:
   - lock-in
@@ -10,13 +10,13 @@ references:
     url: "https://www.it-planungsrat.de/beschluss/b-2026-03-it"
 ---
 
-On 18 March 2026, Germany’s IT-Planungsrat made digital sovereignty more concrete.
+On 18 March 2026, Germany’s IT-Planungsrat made a structural change: digital sovereignty is no longer treated as a question of where systems run, but of how they are built.
 
-For years, the debate has focused on where systems run: data residency, local hosting, hyperscaler contracts. Those questions matter, but they miss the core issue.
+For years, the debate focused on data residency, local hosting, and contracts with hyperscalers. Relevant, but not decisive.
 
-The real question is who controls how a system behaves under pressure.
+What matters is who controls how systems behave under pressure.
 
-Germany’s decision matters because it shifts sovereignty out of procurement language and hosting location and into architecture. It moves the conversation from isolated projects to a governed stack of shared capabilities, standards, and constraints.
+This decision moves sovereignty out of procurement and into architecture. The focus shifts from isolated projects to a governed stack of shared capabilities, standards, and constraints.
 
 ## From services to shared infrastructure
 
